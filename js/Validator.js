@@ -128,7 +128,7 @@ let config = {
         required: true,
         minlength: 7,
         maxlength: 25,
-        matching: 'lozinka'
+        matching: 'register_lozinka'
     }
 }
 

@@ -13,6 +13,11 @@ document.querySelector('#registrationForm').addEventListener('submit', e => {
 
     if(validator1.validationPassed())
     {
+        user = new User();
+        user.username = document.querySelector('#korisnicko_ime').value;
+        user.email = document.querySelector('#email').value;
+        user.password = document.querySelector('#lozinka').value;
+        user.create();
         
     }
     else
