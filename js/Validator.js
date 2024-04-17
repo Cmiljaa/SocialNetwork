@@ -102,3 +102,33 @@ class Validator {
 	    return false;
 	}
 }
+
+let config = {
+    'korisnicko_ime':{
+        required: true,
+        minlength: 5,
+        maxlength: 50
+    },
+
+    'register_email':{
+        required: true,
+        email: true,
+        minlength: 5,
+        maxlength: 50
+    },
+
+    'register_lozinka':{
+        required: true,
+        minlength: 7,
+        maxlength:25,
+        matching: 'ponovi_lozinku'
+    },
+
+    'ponovi_lozinku':{
+        required: true,
+        minlength: 7,
+        maxlength: 25,
+        matching: 'lozinka'
+    }
+}
+
