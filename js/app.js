@@ -13,7 +13,7 @@ document.querySelector('#registrationForm').addEventListener('submit', e => {
 
     if(validator1.validationPassed())
     {
-        alert('Sve je ok');
+        
     }
     else
     {
