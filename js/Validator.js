@@ -131,4 +131,3 @@ let config = {
         matching: 'register_lozinka'
     }
 }
-

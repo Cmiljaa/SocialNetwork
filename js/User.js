@@ -21,7 +21,31 @@ class User{
         })
         .then(response => response.json())
         .then(data => {
-            window.location.href = 'hexa.html';
+            let session = new Session();
+            session.user_id =  data.id;
+            session.startSession();
         })
+    }
+
+    login(){
+        fetch(this.api_url + "/users")
+        .then(response => response.json())
+        .then(data => {
+            let login_successful = 0;
+            data.forEach(db_user => {
+                if(db_user.email === this.email && db_user.password === this.password){
+                    login_successful = 1;
+                    let session = new Session();
+                    session.user_id = db_user.id;
+                    session.startSession();
+                    window.location.href = 'hexa.html';
+                }
+            });
+
+            if(login_successful === 0)
+            {
+                alert('Pogresan email ili lozinka!');
+            }
+        });
     }
 }
