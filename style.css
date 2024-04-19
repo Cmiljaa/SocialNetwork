@@ -113,3 +113,40 @@ form div button{
 .custom-modal ul li{
     list-style-type: none;
 }
+
+.inner-container{
+    border: 1px solid rgb(0, 255, 0);
+    color: white;
+    padding: 15px;
+}
+
+.inner-container.left-side{
+    text-align: center;
+}
+
+.inner-container img.profile{
+    border-radius: 50%;
+    width: 70%;
+    display: block;
+    margin: auto;
+    border: 5px solid #fff;
+    margin-bottom: 20px;
+}
+
+.inner-container.right-side form{
+    display: flex;
+    height: 100px;
+}
+
+.inner-container.right-side form textarea{
+    width: 85%;
+    border: 0;
+    padding: 10px;
+    resize: none;
+    outline-color: rgb(0, 255, 0);
+}
+
+.inner-container.right-side form button{
+    width: 15%;
+    border: 0;
+}
