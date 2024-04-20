@@ -84,6 +84,7 @@ form div button{
     box-shadow: rgba(255, 255, 255, 0.8) 0 0 1000px 10000px;
     padding: 50px;
     max-width: 650px;
+    color: white;
     margin: auto;
     position: absolute;
     top: 10%;
@@ -112,6 +113,10 @@ form div button{
 
 .custom-modal ul li{
     list-style-type: none;
+}
+
+.custom-modal #editForm{
+    color: white;
 }
 
 .inner-container{
@@ -149,4 +154,10 @@ form div button{
 .inner-container.right-side form button{
     width: 15%;
     border: 0;
+}
+
+#deleteProfile{
+    border: 2px solid red;
+    color: red;
+    padding: 5px 15px;
 }
