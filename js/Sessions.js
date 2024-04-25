@@ -5,9 +5,7 @@ class Session{
         const d = new Date();
         d.setTime(d.getTime() + (2*24*60*60*1000));
         let expires = "expires=" + d.toUTCString();
-        console.log("user_id=" + this.user_id + ";" + expires);
         document.cookie = "user_id=" + this.user_id + ";" + expires;
-        
     }
 
     getSession() {
