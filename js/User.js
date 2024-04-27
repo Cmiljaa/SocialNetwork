@@ -22,13 +22,14 @@ class User{
         .then(response => response.json())
         .then(data => {
             let session = new Session();
-            session.user_id =  data.id;
+            session.user_id = data.id;
             session.startSession();
+            window.location.href = 'hexa.html';
         })
     }
 
     login(){
-        fetch(this.api_url + "/users")
+        fetch(this.api_url + "/users")   
         .then(response => response.json())
         .then(data => {
             let login_successful = 0;
@@ -38,7 +39,7 @@ class User{
                     let session = new Session();
                     session.user_id = db_user.id;
                     session.startSession();
-                    window.location.href = 'hexa.html';
+                    window.location.href = 'hexa.html'; 
                 }
             });
 
@@ -48,6 +49,7 @@ class User{
             }
         });
     }
+
     async get(user_id){
         let api_url = this.api_url + '/users/' + user_id;
         

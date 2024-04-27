@@ -17,6 +17,7 @@ if(session_id !== "") {
 
 } else {
     window.location.href = "/";
+    alert('Ne radi');
 }
 
 document.querySelector('#logout').addEventListener('click', () =>{
