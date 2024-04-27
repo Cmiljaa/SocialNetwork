@@ -50,8 +50,7 @@ document.querySelector('#deleteProfile').addEventListener('click', e =>{
     if(confirm(text) === true)
     {
         let user = new User();
-
-        user.delete();
+        user.delete(session.getSession());
     }
 })
 

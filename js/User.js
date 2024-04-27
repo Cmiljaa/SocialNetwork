@@ -59,4 +59,15 @@ class User{
 
         return data;
     }
+
+    delete(user_id){
+        fetch(this.api_url + '/users/' + user_id,{
+            method: 'DELETE'
+        }).then(response => response.json())
+        .then(data => {
+            window.location.href = 'index.html';
+            let session = new Session();
+            session.destroySession();
+        });
+    }
 }
