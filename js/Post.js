@@ -39,7 +39,7 @@ class Post{
         fetch(this.api_url + '/posts/' + post_id, {
           method:'DELETE'
         }).then(response => response.json())
-        .then(data => data)
+        .then(data => alert('Post obrisan!'))
       }
 
       like(post_id, likes){

@@ -69,7 +69,5 @@ class User{
             let session = new Session();
             session.destroySession();
         });
-
-        
     }
 }

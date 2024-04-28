@@ -42,7 +42,7 @@ document.querySelector('#editForm').addEventListener('submit', e => {
     user.edit();
 });
 
-document.querySelector('#deleteProfile').addEventListener('click', async e =>{
+document.querySelector('#deleteProfile').addEventListener('click', e =>{
     e.preventDefault();
 
     let text = 'Da li ste sigurni da zaista zelite da obrisete profil?';
@@ -50,14 +50,13 @@ document.querySelector('#deleteProfile').addEventListener('click', async e =>{
     if (confirm(text) === true) {
         let user = new User();
         let post = new Post();
-        let data = await post.getAllPosts();
-        await Promise.all(data.map(async (element) => {
-            if (element.user_id === session.getSession()) {
-                await post.delete(element.id);
-                console.log(post);
+        data = await post.getAllPosts();
+        data.forEach(element => {
+            if(element.user_id === session.getSession())
+            {
+                post.delete(element.id);
             }
-        }));
-        
+        })
         user.delete(session.getSession());
     }
 })
