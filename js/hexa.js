@@ -47,17 +47,17 @@ document.querySelector('#deleteProfile').addEventListener('click', async e =>{
 
     let text = 'Da li ste sigurni da zaista zelite da obrisete profil?';
 
-    if(confirm(text) === true)
-    {
+    if (confirm(text) === true) {
         let user = new User();
         let post = new Post();
-        data = await post.getAllPosts();
-        data.forEach(element => {
-            if(element.user_id === session.getSession())
-            {
-                post.delete(element.id);
+        let data = await post.getAllPosts();
+        await Promise.all(data.map(async (element) => {
+            if (element.user_id === session.getSession()) {
+                await post.delete(element.id);
+                console.log(post);
             }
-        })
+        }));
+        
         user.delete(session.getSession());
     }
 })
